@@ -78,11 +78,29 @@ img{
   z-index: 998;
   top: 0;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   width: 100%;
   background-color: var(--second-modal-color);
-
+  /* con opacity */
+ /*  opacity: 0;
+  transition: transform 0.3s, opacity .5s ease; */
+  transition: transform .3s ease;
+/* arrriba */
+  transform: translate(0,-100%) ;
+  /* De abajo */
+  transform: translate(0,100%) ;
+  /* De derecha */
+/*   transform: translate(100%,0) ;
+ */  /* De izquierda */
+/*   transform: translate(-100%,0) ;
+ */
 }
+
+.panel.is-active{
+  transform: translate(0,0);
+ /*  opacity:1; */
+} 
 
 .menu{
   width: inherit;
@@ -100,5 +118,15 @@ img{
   font-size: 1.5rem;
   text-decoration: none;
   color:var(--main-color);
-  transition: all 0.3s ease;
+ /*  transition: all 0.3s ease; */
+   transition: background-color 300ms ease,
+                        color 300ms ease,
+                        font-weight 300ms ease; 
+
+}
+
+.menu a:hover {
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
 }
