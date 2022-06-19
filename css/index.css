@@ -81,6 +81,7 @@ img{
   left: 0;
   right: 0;
   width: 100%;
+  overflow-y: auto;
   background-color: var(--second-modal-color);
   /* con opacity */
  /*  opacity: 0;
