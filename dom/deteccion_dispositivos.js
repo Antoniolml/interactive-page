@@ -77,6 +77,6 @@ export default function userDeviceInfo(id){
 
   //REDIRECCIONES
   if(isMobile.android()) {
-    window.location.href = "https://youtube.com/"
+    window.location.href = "#"
   }
 }

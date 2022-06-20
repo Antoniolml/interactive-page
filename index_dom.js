@@ -13,6 +13,7 @@ import getGeolocation from "./dom/geolocalización.js";
 import searchFilter from "./dom/filtro-busquedas.js";
 import draw from "./dom/sorteo.js";
 import slider from "./dom/carrusel.js";
+import scrollSpy from "./dom/scroll_espia.js";
 
 
 
@@ -48,6 +49,7 @@ d.addEventListener("DOMContentLoaded", e => {
   searchFilter(".card-filter", ".card");
   draw("#winner-btn" , ".player")
   slider();
+  scrollSpy();
 
 });
 

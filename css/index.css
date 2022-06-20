@@ -85,14 +85,15 @@ img{
   overflow-y: auto;
   background-color: var(--second-modal-color);
   /* con opacity */
- /*  opacity: 0;
-  transition: transform 0.3s, opacity .5s ease; */
-  transition: transform .3s ease;
-/* arrriba */
-  transform: translate(0,-100%) ;
-  /* De abajo */
-  transform: translate(0,100%) ;
-  /* De derecha */
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s, opacity .5s ease; 
+/*   transition: transform .3s ease;
+ *//* arrriba */
+/*   transform: translate(0,-100%) ;
+ */  /* De abajo */
+/*   transform: translate(0,100%) ;
+ */  /* De derecha */
 /*   transform: translate(100%,0) ;
  */  /* De izquierda */
 /*   transform: translate(-100%,0) ;
@@ -100,8 +101,9 @@ img{
 }
 
 .panel.is-active{
-  transform: translate(0,0);
- /*  opacity:1; */
+/*   transform: translate(0,0);
+ */ opacity:1; 
+  visibility: visible;
 } 
 
 .menu{
@@ -326,4 +328,67 @@ img{
 
 .slider a:hover{
   color: #4d4d4d;
+}
+
+
+
+/* ********* scrollSpy*********** */
+@media screen and (min-width: 1024px){
+  body{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas: 
+      "header header"
+      "main panel";
+
+  }
+
+  main{
+    grid-area:main;
+  }
+
+  .header{
+    grid-area: header;
+  }
+
+  .panel{
+    grid-area: panel;
+    align-self: start;
+    position: sticky;
+    top: 4rem;
+    justify-content:flex-start ;
+    background-color: var(--second-color);
+    transform: translate(0,0);
+    opacity:1; 
+    visibility: visible;
+  }
+
+  .panel-btn{
+    display: none;
+  }
+
+  .menu{
+    justify-content: start;
+  }
+
+  .menu a {
+    font-size: 2rem;
+    padding: 1.95rem;
+  }
+
+  .menu a:hover,
+  .menu a.active{
+    color: var(--second-color);
+    background-color: var(--main-color);
+  }
+
+  .scroll_btn{
+    right: initial;
+    left: calc(6.25rem + 1vw);
+  }
+
+  .section{
+    border: thin solid red;
+  }
 }
